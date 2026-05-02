@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  // baseURL: '/api',
-  baseURL: "https://vijay-xtms.onrender.com/api"
+  baseURL: import.meta.env.VITE_API_URL,
 });
 
 // Attach JWT to every request
