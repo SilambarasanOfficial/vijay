@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #080808;
+    color: #e0e0e0;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #080808;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #c9a84c;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #e8c96e;
+  }
+}
+
+@layer components {
+  .gold-gradient {
+    background: linear-gradient(135deg, #c9a84c 0%, #f0d878 50%, #c9a84c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .btn-gold {
+    @apply inline-block bg-gold text-dark font-semibold px-8 py-3 transition-all duration-300 hover:bg-gold-light tracking-[0.15em] text-xs uppercase cursor-pointer;
+  }
+
+  .btn-outline-gold {
+    @apply inline-block border border-gold text-gold font-semibold px-8 py-3 transition-all duration-300 hover:bg-gold hover:text-dark tracking-[0.15em] text-xs uppercase cursor-pointer;
+  }
+
+  .section-label {
+    @apply text-[10px] tracking-[0.5em] uppercase text-gold;
+  }
+
+  .section-title {
+    @apply font-serif text-white mt-3;
+  }
+
+  .input-field {
+    @apply w-full bg-dark-3 border border-white/10 focus:border-gold/50 text-white px-4 py-3 outline-none transition-colors duration-200 text-sm placeholder-gray-600;
+  }
+
+  .admin-label {
+    @apply block text-[10px] tracking-[0.3em] uppercase text-gray-500 mb-2;
+  }
+}
+
+.columns-masonry {
+  column-count: 2;
+  column-gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .columns-masonry {
+    column-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .columns-masonry {
+    column-count: 4;
+  }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 12px;
+}
